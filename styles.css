@@ -1,0 +1,138 @@
+body {
+    background-color: azure;
+    font-family: 'Playfair Display', serif;
+    margin: 0 auto;
+    }
+
+
+header{
+    margin: 0 auto;
+}
+
+
+p {
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    color: rgb(88, 88, 88);
+    text-align: center;
+    padding: 0 200px;
+    margin-top: 0;
+    line-height: 25px;
+}
+
+.titulo {
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+    font-size: 34px;
+    text-align: center;
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: rgb(0, 3, 5);
+    text-align: center;
+    border-top: 3px solid rgb(75, 162, 255);
+    border-bottom: 3px solid rgb(75, 162, 255);
+    border-radius: 15%;
+    margin: 0 350px;
+    padding: 120px auto;
+    margin-bottom: 20px;
+    line-height: 120px;
+}
+
+h2 {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    color: rgb(34, 121, 207);
+    text-align: center;
+}
+
+
+h3 {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    color: rgb(103, 172, 241);
+    text-align: center;
+}
+
+a{
+    color: rgb(88, 88, 88);
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+img{
+    border: 1px solid grey;
+}
+
+.selectors{
+    margin: 10px 470px 10px;
+}
+
+
+.ej1{
+    width: 520px;
+    font-size: 16px;
+    background-color: white;
+    margin: 10px 470px 10px;
+    padding: 10px auto;
+    position: relative;
+    line-height: 25px;
+    border:1px solid rgb(161, 161, 161)
+}
+
+.ej2{
+    width: 520px;
+    font-size: 16px;
+    background-color: white;
+    margin: 10px 470px 10px;
+    padding: 10px auto;
+    position: relative;
+    line-height: 25px;
+    border:1px solid rgb(161, 161, 161)
+}
+
+.ej3{
+    width: 520px;
+    font-size: 16px;
+    background-color: white;
+    margin: 10px 470px 10px;
+    padding: 10px auto;
+    position: relative;
+    line-height: 25px;
+    border:1px solid rgb(161, 161, 161)
+}
+
+
+
+.ej-name{
+    color: rgb(214, 111, 255)
+}
+
+.ej-simb{
+    color:rgb(176, 174, 174);
+}
+
+.ej-color{
+    color:rgb(255, 84, 84);
+}
+
+.code-word{
+    background-color:rgb(233, 233, 233);
+}
+
+footer{
+    font-family:tahoma, sans-serif;
+    font-size: 10px;
+    text-align: right;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+
+}

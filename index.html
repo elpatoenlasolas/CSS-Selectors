@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css"/>
+<title>CSS Selectors</title>
+<header>
+    <div class="titulo">
+        <h1>CSS Selectors</h1>
+        </div>
+</header>
+<body>
+    <p>In <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS"><em>CSS</em></a>, selectors are used to target the <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML"><em>HTML</em></a> elements on our web pages that we want to style. 
+        There are a wide variety of CSS selectors available, allowing for fine-grained precision when selecting elements to style. 
+        In this article and its sub-articles we'll run through the different types in great detail, seeing how they work.</p>
+        <h2>What is a selector?</h2>
+<p>You have met selectors already. A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.</p>
+<img class="selectors" src="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/selector.png" alt="selectors">
+<p>In earlier articles you met some different selectors, and learned that there are selectors that target the document in different ways — for example by selecting an element such as <code class="code-word">h1</code>, or a class such as <code class="code-word">.special</code>.
+
+    In CSS, selectors are defined in the CSS Selectors specification; like any other part of CSS they need to have support in browsers for them to work. The majority of selectors that you will come across are defined in the Level 3 Selectors specification, which is a mature specification, therefore you will find excellent browser support for these selectors.</p>
+    <h3>Selectors Lists</h3>
+    <p>If you have more than one thing which uses the same CSS then the individual selectors can be combined into a selector list so that the rule is applied to all of the individual selectors. For example, if I have the same CSS for an <code class="code-word">h1</code> and also a class of <code class="code-word">.special</code>, I could write this as two separate rules.</p>
+    
+<div class="ej1"><pre><code>
+    <span class="ej-name">h1</span> <span class="ej-simb">{</span>
+         <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+      
+    <span class="ej-name">.special</span> <span class="ej-simb">{</span>
+            <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+      
+    </pre></code></div>
+
+    <p>I could also combine these into a selector list, by adding a comma between them.</p>
+
+<div class="ej2"><pre><code>
+    <span class="ej-name">h1, .special</span> <span class="ej-simb">{</span>
+        <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+        </pre></code></div>
+
+        <p>White space is valid before or after the comma. You may also find the selectors more readable if each is on a new line.</p>
+
+
+        <div class="ej3"><pre><code>
+    <span class="ej-name">h1,
+    .special</span> <span class="ej-simb">{</span>
+        <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+        </pre></code></div>
+
+<p>In the following example, the invalid class selector rule will be ignored, whereas the <code class="code-word">h1</code> would still be styled.</p>
+
+        <div class="ej1"><pre><code>
+    <span class="ej-name">h1</span> <span class="ej-simb">{</span>
+        <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+      
+    <span class="ej-name">..special</span> <span class="ej-simb">{</span>
+        <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+      
+    </pre></code></div>
+
+<p>When combined however, neither the <code class="code-word">h1</code> nor the class will be styled as the entire rule is deemed invalid.
+</p>
+
+<div class="ej1"><pre><code>
+    <span class="ej-name">h1, </span><span class="ej-name">..special</span> <span class="ej-simb">{</span>
+        <span class="ej-color">color:</span> blue;
+    <span class="ej-simb">}</span>
+      
+    </pre></code></div>
+
+   <h2>Types of Selectors</h2>
+
+    <p>There are a few different groupings of selectors, and knowing which type of selector you might need will help you to find the right tool for the job. In this article's subarticles we will look at the different groups of selectors in more detail.</p>
+
+    <h3>Type, class, and ID selectors</h3>
+    <p>This group includes selectors that target an HTML element such as an <code class="code-word">&lt;h1&gt;</code>.</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">h1 <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <p>It also includes selectors which target a class:</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">.box <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <p>or, an ID:</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">#unique <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <h3>Attribute selectors</h3>
+
+    <p>This group of selectors gives you different ways to select elements based on the presence of a certain attribute on an element:</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">a[title] <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <p>Or even make a selection based on the presence of an attribute with a particular value:</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">a[href="https://example.com"] <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <h3>Pseudo-classes and pseudo-elements</h3>
+
+    <p>This group of selectors includes pseudo-classes, which style certain states of an element. The <code>:hover</code> pseudo-class for example selects an element only when it is being hovered over by the mouse pointer:</p>
+
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">a:hover <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <p>It also includes pseudo-elements, which select a certain part of an element rather than the element itself. For example, <code>::first-line</code> always selects the first line of text inside an element (a <code>&lt;p&gt;</code> in the below case), acting as if a <code>&lt;span&gt;</code> was wrapped around the first formatted line and then selected.</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">p::first-line <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+    <h3>Combinators</h3>
+
+    <p>The final group of selectors combine other selectors in order to target elements within our documents. The following, for example, selects paragraphs that are direct children of <code>&lt;article&gt;</code> elements using the child combinator (<code>&lt;</code>):</p>
+
+    <div class="ej3"><pre><code>
+        <span class="ej-name">article > p <span class="ej-simb">{ </span> <span class="ej-simb">}</span> 
+    </code></pre></div>
+
+
+    <h2>Summary</h2>
+<p>In this article we've introduced CSS selectors, which enable you to target particular HTML elements.</p>
+
+
+
+
+<div>
+
+</div>
+<div>
+
+</div>
+<footer>
+    Created by Patricio Funes | 2022 | Learning with <a href="http://www.codecademy.com">CodeCademy</a>
+
+
+</footer>
+</body>
+</html>
